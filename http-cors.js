@@ -30,6 +30,7 @@ Cors.prototype.apply = function( request, response ){
 
 	if (request.method === 'OPTIONS') {
 		response.statusCode = 204;
+    response.end()
 		return true;
 	}
 };
