@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken')
 const server = http.createServer(function (req, res) {
 
   if (cors.apply(req, res)) return;
-  // get Bearer Header
+  //get Bearer Header
   var bearerToken;
   var bearerHeader = req.headers["authorization"];
   if (typeof bearerHeader !== 'undefined') {
@@ -37,6 +37,8 @@ const server = http.createServer(function (req, res) {
 
 
 
+}).on('error', function (err) {
+  console.log(err)
 })
 
 server.listen(4000)
