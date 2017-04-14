@@ -1,11 +1,14 @@
 {
-  "name": "secure-pouchcloud",
+  "name": "relax-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "bin": {
+    "relax": "./bin/relax"
+  },
   "scripts": {
     "test": "standard",
-    "start": "node server.js"
+    "start": "./bin/relax"
   },
   "author": "Tom",
   "license": "ISC",

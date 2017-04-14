@@ -42,4 +42,4 @@ const server = http.createServer(function (req, res) {
   console.log(err)
 })
 
-server.listen(4000)
+module.exports = server
