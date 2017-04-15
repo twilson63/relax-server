@@ -11,7 +11,7 @@
     "start": "./bin/relax"
   },
   "author": "Tom",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.1",
     "dotenv": "^2.0.0",

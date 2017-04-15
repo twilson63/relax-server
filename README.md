@@ -1,21 +1,32 @@
-# cors-pouchdb-server
+# relax server
 
-Is a basic couchdb proxy server, that jwt and cors
+Relax Server is a minimum server that connects your clients to a couchdb or any backend api. It provides support for Auth0 or JWT Authentication from the client and proxies the request using the request client and streams.
+
+## Why
+
+One Use Case:
+
+Offline First implementation with PouchDB and syncing with a backend CouchDB.
+
+Bakend API Server uses a different key than your users and you don't want to expose
+the key to your client system.
 
 ## Environment variables
 
-DB=[couchdb url]
+DB_SERVER=[couchdb url]
 AUTH0_SECRET=[auth0 secret]
 
 ## Usage
 
 ```
-npm install
-npm start
+npm install relax-server -g
+DB_SERVER=... JWT_SECRET=... PORT=3000 relax
 ```
 
-## Why
+## Contributing
 
-This server provides a bridge between a couchdb server and pouchdb browser application.
+Contributions are welcome to fix bugs and potential security leaks.
 
+## License
 
+MIT
