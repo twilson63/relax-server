@@ -4,11 +4,8 @@ Relax Server is a minimum server that connects your clients to a couchdb or any 
 
 ## Why
 
-One Use Case:
-
-Offline First implementation with PouchDB and syncing with a backend CouchDB.
-
-Bakend API Server uses a different key than your users and you don't want to expose
+* Offline First implementation with PouchDB and syncing with a backend CouchDB.
+* Backend API Server uses a different key than your users and you don't want to expose
 the key to your client system.
 
 ## Environment variables
