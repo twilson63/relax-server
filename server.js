@@ -22,7 +22,7 @@ const server = http.createServer(function (req, res) {
     var bearer = bearerHeader.split(' ')
     bearerToken = bearer[1]
 
-    jwt.verify(bearerToken, process.env.AUTH0_SECRET, (err, decoded) => {
+    jwt.verify(bearerToken, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
         res.writeHead(403)
         res.end(err.message)
@@ -30,7 +30,7 @@ const server = http.createServer(function (req, res) {
       }
       req
         .pipe(
-          request({ method: req.method, url: process.env.DB_SERVER + req.url })
+          request({ method: req.method, url: process.env.SERVER + req.url })
         )
         .pipe(res)
     })

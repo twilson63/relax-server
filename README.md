@@ -17,12 +17,37 @@ AUTH0_SECRET=[auth0 secret]
 
 ```
 npm install relax-server -g
-DB_SERVER=... JWT_SECRET=... PORT=3000 relax
+SERVER=... JWT_SECRET=... ORIGIN=http://client.now.sh PORT=3000 relax
 ```
+
+## Development
+
+For development you can create a .env file and put your env variables in
+the env file. For production, you need to provide the env variables as the
+app is being invoked.
+
+.env
+
+```
+SERVER=http://localhost:5984
+JWT_SECRET=1234
+ORIGIN=http://localhost:3000
+```
+
 
 ## Contributing
 
 Contributions are welcome to fix bugs and potential security leaks.
+
+## Testing
+
+JWT
+
+`eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE0OTIyOTUyMDAsImV4cCI6MTUyMzgzMTIwMCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSJ9.X_anaO3nyGxjxZYkTiYf2XE_x3NoPA64bFnHatsUiFw`
+
+SECRET
+
+`REALLYBIGSECRET`
 
 ## License
 
