@@ -4,8 +4,8 @@ const HttpCors = require('./http-cors')
 
 const jwt = require('jsonwebtoken')
 
-module.exports = (jwt, server, origin) => {
-  const cors = new HttpCors({ origin: origin || 'http://localhost:3000' })
+module.exports = (token, svr, origin = 'http://localhost:3000') => {
+  const cors = new HttpCors({ origin })
 
   return http.createServer(function (req, res) {
     if (cors.apply(req, res)) return
@@ -16,15 +16,13 @@ module.exports = (jwt, server, origin) => {
       var bearer = bearerHeader.split(' ')
       bearerToken = bearer[1]
 
-      jwt.verify(bearerToken, jwt, (err, decoded) => {
+      jwt.verify(bearerToken, token, (err, decoded) => {
         if (err) {
           res.writeHead(403)
           res.end(err.message)
           return
         }
-        req
-          .pipe(request({ method: req.method, url: server + req.url }))
-          .pipe(res)
+        req.pipe(request({ method: req.method, url: svr + req.url })).pipe(res)
       })
     } else {
       res.writeHead(403)
