@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 var path = require('path')
 var fs   = require('fs')
 var server  = require(path.join(path.dirname(fs.realpathSync(__filename)), '../'))
 
 const PORT = process.env.PORT || 4000
-server.listen(PORT)
+server(process.env.JWT_SECRET, process.env.SERVER, process.env.ORIGIN)
+  .listen(PORT)
+  
 console.log('NodeJS CouchDB Proxy Server Running on ' + PORT)

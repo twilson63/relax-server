@@ -1,7 +1,7 @@
 {
   "name": "relax-server",
   "version": "1.1.0",
-  "description": "",
+  "description": "Relax Server is a minimum server that connects your clients to a couchdb or any backend api. It provides support for Auth0 or JWT Authentication from the client and proxies the request using the request client and streams.",
   "main": "server.js",
   "bin": {
     "relax": "./bin/relax"
@@ -22,5 +22,15 @@
   "engines": {
     "node": "^6.x",
     "npm": "^3.x"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twilson63/relax-server.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/twilson63/relax-server/issues"
+  },
+  "homepage": "https://github.com/twilson63/relax-server#readme"
 }
