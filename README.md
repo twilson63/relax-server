@@ -20,6 +20,27 @@ npm install relax-server -g
 SERVER=... JWT_SECRET=... ORIGIN=http://client.now.sh PORT=3000 relax
 ```
 
+or
+
+```
+mkdir relax-server-app
+cd relax-server-app
+touch index.js
+npm init -y
+npm install relax-server --save
+```
+
+index.js
+
+```
+const server = require('relax-server')
+
+// get secrets....
+
+server(jwt, server, origin)
+  .listen(process.env.PORT || 4000)
+```
+
 ## Development
 
 For development you can create a .env file and put your env variables in
