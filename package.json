@@ -1,6 +1,6 @@
 {
   "name": "relax-server",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Relax Server is a minimum server that connects your clients to a couchdb or any backend api. It provides support for Auth0 or JWT Authentication from the client and proxies the request using the request client and streams.",
   "main": "server.js",
   "bin": {
